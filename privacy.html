@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Miskal</title>
+<meta name="description" content="Miskal collects nothing about you; your records stay on your own device.">
+<link rel="icon" href="/icon.png">
+<style>
+:root {
+  --gold: #e0a834; --gold-deep: #8b580a;
+  --ink: #16161a; --body: #3b3b42; --muted: #71717a;
+  --line: #e6e6ea; --bg: #fbfbfc; --card: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --ink: #f4f4f5; --body: #d4d4d8; --muted: #a1a1aa;
+          --line: #2a2a2e; --bg: #0d0d0f; --card: #161619; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--body);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-text-size-adjust: 100%; }
+.wrap { max-width: 42rem; margin: 0 auto; padding: 2rem 1.15rem 4rem; }
+header { display: flex; align-items: center; gap: .7rem; margin-bottom: 2.25rem; }
+header img { width: 42px; height: 42px; border-radius: 10px; }
+header .name { font-weight: 700; color: var(--ink); font-size: 1rem; }
+header .what { font-size: .66rem; letter-spacing: .11em; text-transform: uppercase; color: var(--gold-deep); }
+@media (prefers-color-scheme: dark) { header .what { color: var(--gold); } }
+.langs { margin-left: auto; font-size: .85rem; white-space: nowrap; }
+.langs a { color: var(--muted); text-decoration: none; }
+.langs a[aria-current] { color: var(--ink); font-weight: 600; }
+h1 { color: var(--ink); font-size: 1.55rem; line-height: 1.25; margin: 0 0 .3rem; }
+h2 { color: var(--ink); font-size: 1.05rem; margin: 2.25rem 0 .5rem; }
+.meta { color: var(--muted); font-size: .85rem; margin: 0 0 1.75rem; }
+ul { padding-left: 1.2rem; }
+li { margin: .35rem 0; }
+a { color: var(--gold-deep); }
+@media (prefers-color-scheme: dark) { a { color: var(--gold); } }
+strong { color: var(--ink); }
+code { font-size: .9em; }
+footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--line);
+  color: var(--muted); font-size: .85rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="/icon.png" alt="">
+    <div>
+      <div class="name">Miskal</div>
+      <div class="what">GOLD-BASED LEDGER</div>
+    </div>
+    <nav class="langs">
+      <a href="/gizlilik" >TR</a> · <a href="/privacy" aria-current="page">EN</a>
+    </nav>
+  </header>
+
+  <h1>Privacy Policy</h1>
+  <p class="meta"><strong>Last updated:</strong> 28 September 2026 · <strong>App version:</strong> 1.0.0</p>
+
+<h2>In short</h2>
+<p>This app collects nothing about you. There is no account to create. Every record you enter stays on your own device and is sent to no server. We, as the developer, cannot see your data.</p>
+<h2>What is stored, and where</h2>
+<p>Accounts, entries, instalment plans, loans, assets, your settings and deleted records (kept 30 days) live <strong>only in your device's own storage</strong>. Removing the app removes all of it. Settings → Reset data does the same thing.</p>
+<h2>What the internet connection is used for</h2>
+<p>The app goes online for one thing: <strong>exchange rates and the gold price</strong>. The sources are:</p>
+<ul>
+<li>Central Bank of the Republic of Türkiye (tcmb.gov.tr) — exchange rates and</li>
+<p>  gram gold</p>
+<li>European Central Bank reference rates (via frankfurter.dev) — the alternative</li>
+<p>  rate source</p>
+<li>International gold price (xaus.com) — the COMEX gold close</li>
+</ul>
+<p>It also checks, about once a month, a small public file of published tax and inflation figures used by the calculators. That file is fetched, never written to.</p>
+<p>These requests carry <strong>a date and nothing else</strong>. None of your records, amounts, account names or device details are sent. As with any request over the internet, the server on the other end sees your IP address; that is outside the app's control and subject to that organisation's own policies.</p>
+<p>The app works offline; the last rates fetched are kept on the device.</p>
+<h2>Backups</h2>
+<p>You create a backup file and you decide where it goes (Files, iCloud Drive, Google Drive, e-mail, anywhere). The file is not sent to us or to any third party.</p>
+<p>You may put a password on a backup. An encrypted backup is encrypted on your device with AES-256-GCM, with the key derived from your password using PBKDF2. <strong>We do not know your password and cannot recover it</strong>; a backup whose password is lost cannot be restored. The app warns you of this before you turn the feature on.</p>
+<h2>Passcode and biometric lock</h2>
+<p>The numeric passcode you choose is not stored as text: what is kept is a salted SHA-256 hash, held in the device's secure storage (iOS Keychain / Android Keystore). Face ID, Touch ID and fingerprint checks are performed entirely by the operating system; the app never sees or stores biometric data.</p>
+<h2>Contacts</h2>
+<p>If you tap "Choose from contacts" while adding an account, the phone's own contact picker opens. The app does not read your address book; it fills the form with the name, phone number, e-mail and address of the single contact you picked. That information is kept inside that account, on your device, and is sent nowhere.</p>
+<p>On iPhone no permission is asked for at all: the system hands the chosen contact straight to the app. On Android the system returns only an identifier for the contact, so contacts permission is asked for once in order to read the details. It is asked at the moment you tap the button, not at startup, and if you decline you can fill the fields by hand. The app never asks for permission to write to your contacts.</p>
+<h2>What is not collected</h2>
+<ul>
+<li>No analytics, usage statistics or crash reports.</li>
+<li>No advertising, no advertising identifier.</li>
+<li>No third-party tracking software of any kind.</li>
+<li>No access to location, photos or calendar; contacts are touched only as</li>
+<p>  described above, for the one contact you choose.</p>
+</ul>
+<h2>Reports and sharing</h2>
+<p>PDF and spreadsheet reports are produced on your device. They leave it only when you send them yourself from the share menu.</p>
+<h2>Calculators</h2>
+<p>Figures you type into the loan and property calculators are not recorded. They are kept on the device only so the next visit starts where you left off, and they are not included in backups.</p>
+<h2>Purchases</h2>
+<p>Miskal Pro is sold through the App Store and Google Play. Those stores handle the payment and tell the app only whether a subscription is active; no payment details reach the app or us. The purchase is tied to your store account, not to an account with us — there is none.</p>
+<h2>Children</h2>
+<p>The app is not directed at children and does not knowingly collect data from them.</p>
+<h2>Changes</h2>
+<p>If this policy changes, the updated text is published on the app's store page and at this address, and the "last updated" date above changes.</p>
+<h2>Contact</h2>
+<p>Questions: <a href="mailto:support@miskal.app">support@miskal.app</a></p>
+
+  <footer>Miskal · <a href="mailto:support@miskal.app">support@miskal.app</a></footer>
+</div>
+</body>
+</html>
