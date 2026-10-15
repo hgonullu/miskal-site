@@ -59,10 +59,11 @@ footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--lin
 .other { margin-top: 2.5rem; }
 .other-label { font-size: .7rem; letter-spacing: .11em; text-transform: uppercase; color: var(--muted);
   margin-bottom: .5rem; }
-.other-app { display: flex; flex-direction: column; gap: .2rem; padding: .85rem 1rem;
+.other-app { display: flex; align-items: center; gap: .9rem; padding: .85rem 1rem;
   border: 1px solid var(--line); border-radius: 12px; background: var(--card); text-decoration: none; }
-.other-app strong { color: var(--gold-deep); }
-@media (prefers-color-scheme: dark) { .other-app strong { color: var(--gold); } }
+.other-app img { width: 48px; height: 48px; border-radius: 11px; flex: none; }
+.other-app div { display: flex; flex-direction: column; gap: .2rem; min-width: 0; }
+.other-app strong { color: var(--ink); }
 .other-app span { color: var(--body); font-size: .92rem; line-height: 1.45; }
 .other-app .other-en { color: var(--muted); font-size: .85rem; }
 .tm { color: var(--muted); font-size: .75rem; margin-top: .75rem; }
@@ -116,9 +117,12 @@ footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--lin
   <div class="other">
     <div class="other-label">Diğer uygulamamız · Our other app</div>
     <a href="https://realtry.app" class="other-app">
-      <strong>Real TRY</strong>
-      <span>Dolar ve euro bugün kaç TL olmalıydı? TÜİK ve ENAG enflasyonuna göre düzeltilmiş kuru yan yana görün.</span>
-      <span class="other-en">What should the dollar and euro cost in lira today? The rate adjusted for TÜİK and ENAG inflation, side by side.</span>
+      <img src="/realtry-icon.png" alt="" width="48" height="48">
+      <div>
+        <strong>Real TRY</strong>
+        <span>Dolar ve euro bugün kaç TL olmalıydı? TÜİK ve ENAG enflasyonuna göre düzeltilmiş kuru yan yana görün.</span>
+        <span class="other-en">What should the dollar and euro cost in lira today? The rate adjusted for TÜİK and ENAG inflation, side by side.</span>
+      </div>
     </a>
   </div>
 
