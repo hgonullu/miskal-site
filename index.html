@@ -48,6 +48,23 @@ footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--lin
 .stores .apple img { height: 52px; width: auto; }
 /* Google's badge carries its own clear space; this size lines its dark shape up with Apple's. */
 .stores .play img { height: 68px; width: auto; margin: -8px -6px; }
+/* Our own "coming soon" box, the same as on realtry.app; never a link. */
+.store { display: flex; flex-direction: column; justify-content: center; min-width: 11rem;
+  min-height: 52px; padding: .45rem 1.1rem; border-radius: 12px; background: var(--ink);
+  color: var(--bg); line-height: 1.25; opacity: .45; cursor: default; }
+.store small { font-size: .72rem; opacity: .8; }
+.store strong { font-size: 1.05rem; color: var(--bg); }
+.store .tag { font-size: .72rem; margin-top: .15rem; }
+/* Our other app: a plain link, no tracking; realtry.app links back the same way. */
+.other { margin-top: 2.5rem; }
+.other-label { font-size: .7rem; letter-spacing: .11em; text-transform: uppercase; color: var(--muted);
+  margin-bottom: .5rem; }
+.other-app { display: flex; flex-direction: column; gap: .2rem; padding: .85rem 1rem;
+  border: 1px solid var(--line); border-radius: 12px; background: var(--card); text-decoration: none; }
+.other-app strong { color: var(--gold-deep); }
+@media (prefers-color-scheme: dark) { .other-app strong { color: var(--gold); } }
+.other-app span { color: var(--body); font-size: .92rem; line-height: 1.45; }
+.other-app .other-en { color: var(--muted); font-size: .85rem; }
 .tm { color: var(--muted); font-size: .75rem; margin-top: .75rem; }
 .hero { margin: 1rem 0 2.5rem; }
 .hero h1 { font-size: 1.9rem; }
@@ -56,7 +73,6 @@ footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--lin
 .links { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
 .links a { border: 1px solid var(--line); border-radius: 10px; padding: .55rem .9rem;
   text-decoration: none; background: var(--card); }
-.soon { color: var(--muted); font-size: .9rem; margin-top: 2rem; }
 </style>
 </head>
 <body>
@@ -78,7 +94,7 @@ footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--lin
     krediler ve varlıklar; hepsi tek bir ölçüyle.</p>
     <p>Kayıtlarınız yalnızca cihazınızda kalır. Hesap açmanız gerekmez, reklam yoktur,
     hiçbir veri toplanmaz.</p>
-    
+    <div class="stores"><div class="store" aria-disabled="true"><small>iPhone için</small><strong>App Store</strong><span class="tag">Yakında</span></div><div class="store" aria-disabled="true"><small>Android için</small><strong>Google Play</strong><span class="tag">Yakında</span></div></div>
   </div>
 
   <div class="en">
@@ -88,7 +104,7 @@ footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--lin
     assets, all in one measure that does not move under your feet. In grams or troy ounces,
     whichever you think in.</p>
     <p>Your records stay on your own device. No account, no ads, nothing collected.</p>
-    
+    <div class="stores"><div class="store" aria-disabled="true"><small>for iPhone</small><strong>App Store</strong><span class="tag">Coming soon</span></div><div class="store" aria-disabled="true"><small>for Android</small><strong>Google Play</strong><span class="tag">Coming soon</span></div></div>
   </div>
 
   <div class="links">
@@ -97,7 +113,14 @@ footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--lin
     <a href="mailto:support@miskal.app">support@miskal.app</a>
   </div>
 
-  <p class="soon">App Store ve Google Play’de yakında. · Coming soon to the App Store and Google Play.</p>
+  <div class="other">
+    <div class="other-label">Diğer uygulamamız · Our other app</div>
+    <a href="https://realtry.app" class="other-app">
+      <strong>Real TRY</strong>
+      <span>Dolar ve euro bugün kaç TL olmalıydı? TÜİK ve ENAG enflasyonuna göre düzeltilmiş kuru yan yana görün.</span>
+      <span class="other-en">What should the dollar and euro cost in lira today? The rate adjusted for TÜİK and ENAG inflation, side by side.</span>
+    </a>
+  </div>
 
   <footer>Miskal · <a href="mailto:support@miskal.app">support@miskal.app</a>
   </footer>
