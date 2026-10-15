@@ -6,6 +6,7 @@
 <title>Miskal — Defterinizi altınla tutun</title>
 <meta name="description" content="Cari hesap, taksit, kredi ve varlıklarınızı gram altın cinsinden takip edin. Kayıtlarınız yalnızca cihazınızda kalır.">
 <link rel="icon" href="/icon.png">
+<meta name="apple-itunes-app" content="app-id=6821863460">
 <style>
 :root {
   --gold: #e0a834; --gold-deep: #8b580a;
@@ -41,6 +42,13 @@ code { font-size: .9em; }
 footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--line);
   color: var(--muted); font-size: .85rem; }
 
+.stores { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; margin: 1.5rem 0 0; }
+.stores .badge { display: inline-flex; line-height: 0; border-radius: 10px; }
+.stores .badge:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.stores .apple img { height: 52px; width: auto; }
+/* Google's badge carries its own clear space; this size lines its dark shape up with Apple's. */
+.stores .play img { height: 68px; width: auto; margin: -8px -6px; }
+.tm { color: var(--muted); font-size: .75rem; margin-top: .75rem; }
 .hero { margin: 1rem 0 2.5rem; }
 .hero h1 { font-size: 1.9rem; }
 .hero p { font-size: 1.05rem; }
@@ -70,6 +78,7 @@ footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--lin
     krediler ve varlıklar; hepsi tek bir ölçüyle.</p>
     <p>Kayıtlarınız yalnızca cihazınızda kalır. Hesap açmanız gerekmez, reklam yoktur,
     hiçbir veri toplanmaz.</p>
+    
   </div>
 
   <div class="en">
@@ -79,6 +88,7 @@ footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--lin
     assets, all in one measure that does not move under your feet. In grams or troy ounces,
     whichever you think in.</p>
     <p>Your records stay on your own device. No account, no ads, nothing collected.</p>
+    
   </div>
 
   <div class="links">
@@ -89,7 +99,8 @@ footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--lin
 
   <p class="soon">App Store ve Google Play’de yakında. · Coming soon to the App Store and Google Play.</p>
 
-  <footer>Miskal · <a href="mailto:support@miskal.app">support@miskal.app</a></footer>
+  <footer>Miskal · <a href="mailto:support@miskal.app">support@miskal.app</a>
+  </footer>
 </div>
 </body>
 </html>
