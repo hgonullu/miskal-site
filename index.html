@@ -6,6 +6,9 @@
 <title>Miskal — Defterinizi altınla tutun</title>
 <meta name="description" content="Cari hesap, taksit, kredi ve varlıklarınızı gram altın cinsinden takip edin. Kayıtlarınız yalnızca cihazınızda kalır.">
 <link rel="icon" href="/icon.png">
+<link rel="alternate" hreflang="tr" href="https://miskal.app/">
+<link rel="alternate" hreflang="en" href="https://miskal.app/en">
+<link rel="alternate" hreflang="x-default" href="https://miskal.app/">
 <meta name="apple-itunes-app" content="app-id=6821863460">
 <style>
 :root {
@@ -65,12 +68,10 @@ footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--lin
 .other-app div { display: flex; flex-direction: column; gap: .2rem; min-width: 0; }
 .other-app strong { color: var(--ink); }
 .other-app span { color: var(--body); font-size: .92rem; line-height: 1.45; }
-.other-app .other-en { color: var(--muted); font-size: .85rem; }
 .tm { color: var(--muted); font-size: .75rem; margin-top: .75rem; }
 .hero { margin: 1rem 0 2.5rem; }
 .hero h1 { font-size: 1.9rem; }
 .hero p { font-size: 1.05rem; }
-.en { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--line); }
 .links { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
 .links a { border: 1px solid var(--line); border-radius: 10px; padding: .55rem .9rem;
   text-decoration: none; background: var(--card); }
@@ -84,6 +85,9 @@ footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--lin
       <div class="name">Miskal</div>
       <div class="what">CARİ TAKİP GOLD</div>
     </div>
+    <nav class="langs">
+      <a href="/?lang=tr" hreflang="tr" aria-current="page">TR</a> · <a href="/en" hreflang="en" >EN</a>
+    </nav>
   </header>
 
   <div class="hero">
@@ -98,30 +102,18 @@ footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--lin
     <div class="stores"><div class="store" aria-disabled="true"><small>iPhone için</small><strong>App Store</strong><span class="tag">Yakında</span></div><div class="store" aria-disabled="true"><small>Android için</small><strong>Google Play</strong><span class="tag">Yakında</span></div></div>
   </div>
 
-  <div class="en">
-    <h1>Keep your books in gold</h1>
-    <p>Inflation lies to your books. Miskal converts each entry into fine gold at the rate
-    of the day it happened and freezes it there — receivables, instalments, loans and
-    assets, all in one measure that does not move under your feet. In grams or troy ounces,
-    whichever you think in.</p>
-    <p>Your records stay on your own device. No account, no ads, nothing collected.</p>
-    <div class="stores"><div class="store" aria-disabled="true"><small>for iPhone</small><strong>App Store</strong><span class="tag">Coming soon</span></div><div class="store" aria-disabled="true"><small>for Android</small><strong>Google Play</strong><span class="tag">Coming soon</span></div></div>
-  </div>
-
   <div class="links">
     <a href="/gizlilik">Gizlilik Politikası</a>
-    <a href="/privacy">Privacy Policy</a>
     <a href="mailto:support@miskal.app">support@miskal.app</a>
   </div>
 
   <div class="other">
-    <div class="other-label">Diğer uygulamamız · Our other app</div>
-    <a href="https://realtry.app" class="other-app">
+    <div class="other-label">Diğer uygulamamız</div>
+    <a href="https://realtry.app/?lang=tr" class="other-app">
       <img src="/realtry-icon.png" alt="" width="48" height="48">
       <div>
         <strong>Real TRY</strong>
         <span>Dolar ve euro bugün kaç TL olmalıydı? TÜİK ve ENAG enflasyonuna göre düzeltilmiş kuru yan yana görün.</span>
-        <span class="other-en">What should the dollar and euro cost in lira today? The rate adjusted for TÜİK and ENAG inflation, side by side.</span>
       </div>
     </a>
   </div>
@@ -129,5 +121,16 @@ footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--lin
   <footer>Miskal · <a href="mailto:support@miskal.app">support@miskal.app</a>
   </footer>
 </div>
+<script>
+(function () {
+  try {
+    var q = new URLSearchParams(location.search).get('lang');
+    if (q === 'tr') { localStorage.setItem('miskal-lang', 'tr'); return; }
+    var saved = localStorage.getItem('miskal-lang');
+    if (saved === 'tr') return;
+    if (saved === 'en' || !/^tr\b/i.test(navigator.language || '')) location.replace('/en');
+  } catch (e) {}
+})();
+</script>
 </body>
 </html>
