@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deposit, gold or currency? — Miskal</title>
+<meta name="description" content="A calculator that sets the same money side by side as a term deposit, in gram gold, in dollars and in euros. No forecasts: break-even points and scenarios.">
+<link rel="icon" href="/icon.png">
+<link rel="alternate" hreflang="tr" href="https://miskal.app/mevduat-altin-doviz">
+<link rel="alternate" hreflang="en" href="https://miskal.app/deposit-gold-currency">
+<link rel="alternate" hreflang="x-default" href="https://miskal.app/mevduat-altin-doviz">
+<meta name="apple-itunes-app" content="app-id=6821863460">
+<style>
+:root {
+  --gold: #e0a834; --gold-deep: #8b580a;
+  --ink: #16161a; --body: #3b3b42; --muted: #71717a;
+  --line: #e6e6ea; --bg: #fbfbfc; --card: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --ink: #f4f4f5; --body: #d4d4d8; --muted: #a1a1aa;
+          --line: #2a2a2e; --bg: #0d0d0f; --card: #161619; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--body);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-text-size-adjust: 100%; }
+.wrap { max-width: 42rem; margin: 0 auto; padding: 2rem 1.15rem 4rem; }
+header { display: flex; align-items: center; gap: .7rem; margin-bottom: 2.25rem; }
+header img { width: 42px; height: 42px; border-radius: 10px; }
+header .name { font-weight: 700; color: var(--ink); font-size: 1rem; }
+header .what { font-size: .66rem; letter-spacing: .11em; text-transform: uppercase; color: var(--gold-deep); }
+@media (prefers-color-scheme: dark) { header .what { color: var(--gold); } }
+.langs { margin-left: auto; font-size: .85rem; white-space: nowrap; }
+.langs a { color: var(--muted); text-decoration: none; }
+.langs a[aria-current] { color: var(--ink); font-weight: 600; }
+h1 { color: var(--ink); font-size: 1.55rem; line-height: 1.25; margin: 0 0 .3rem; }
+h2 { color: var(--ink); font-size: 1.05rem; margin: 2.25rem 0 .5rem; }
+.meta { color: var(--muted); font-size: .85rem; margin: 0 0 1.75rem; }
+ul { padding-left: 1.2rem; }
+li { margin: .35rem 0; }
+a { color: var(--gold-deep); }
+@media (prefers-color-scheme: dark) { a { color: var(--gold); } }
+strong { color: var(--ink); }
+code { font-size: .9em; }
+footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--line);
+  color: var(--muted); font-size: .85rem; }
+
+.stores { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; margin: 1.5rem 0 0; }
+.stores .badge { display: inline-flex; line-height: 0; border-radius: 10px; }
+.stores .badge:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.stores .apple img { height: 52px; width: auto; }
+/* Google's badge carries its own clear space; this size lines its dark shape up with Apple's. */
+.stores .play img { height: 68px; width: auto; margin: -8px -6px; }
+/* Our own "coming soon" box, the same as on realtry.app; never a link. */
+.store { display: flex; flex-direction: column; justify-content: center; min-width: 11rem;
+  min-height: 52px; padding: .45rem 1.1rem; border-radius: 12px; background: var(--ink);
+  color: var(--bg); line-height: 1.25; opacity: .45; cursor: default; }
+.store small { font-size: .72rem; opacity: .8; }
+.store strong { font-size: 1.05rem; color: var(--bg); }
+.store .tag { font-size: .72rem; margin-top: .15rem; }
+/* Our other app: a plain link, no tracking; realtry.app links back the same way. */
+.other { margin-top: 2.5rem; }
+.other-label { font-size: .7rem; letter-spacing: .11em; text-transform: uppercase; color: var(--muted);
+  margin-bottom: .5rem; }
+.other-app { display: flex; align-items: center; gap: .9rem; padding: .85rem 1rem;
+  border: 1px solid var(--line); border-radius: 12px; background: var(--card); text-decoration: none; }
+.other-app img { width: 48px; height: 48px; border-radius: 11px; flex: none; }
+.other-app div { display: flex; flex-direction: column; gap: .2rem; min-width: 0; }
+.other-app strong { color: var(--ink); }
+.other-app span { color: var(--body); font-size: .92rem; line-height: 1.45; }
+.tm { color: var(--muted); font-size: .75rem; margin-top: .75rem; }
+.hero { margin: 1rem 0 2.5rem; }
+.hero h1 { font-size: 1.9rem; }
+.hero p { font-size: 1.05rem; }
+.links { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
+.links a { border: 1px solid var(--line); border-radius: 10px; padding: .55rem .9rem;
+  text-decoration: none; background: var(--card); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="/icon.png" alt="">
+    <div>
+      <div class="name">Miskal</div>
+      <div class="what">GOLD-BASED LEDGER</div>
+    </div>
+    <nav class="langs">
+      <a href="/mevduat-altin-doviz" hreflang="tr" >TR</a> · <a href="/deposit-gold-currency" hreflang="en" aria-current="page">EN</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Deposit, gold or currency?</h1>
+    <p>Miskal's calculator shows the same money four ways, side by side: in a term deposit,
+    in gram gold, in dollars and in euros.</p>
+    <p><strong>Looking back:</strong> money put in on a past day is rolled over term by term
+    the way a bank does it; gold, dollars and euros are bought that day and sold on the last.
+    Total and yearly return for each, and the real result by TÜİK and by ENAG.</p>
+    <p><strong>From today on:</strong> no forecasts. The deposit's balance at maturity is known
+    today, so the calculator shows the price gold, the dollar and the euro must reach to keep
+    up, and the highest monthly inflation at which the deposit keeps its buying power. With
+    TÜİK, ENAG and last-12-months scenarios, and your own if you like.</p>
+    <p>Open it in the app from the Overview screen. Results can be shared as PDF, Excel or HTML.
+    Not investment advice.</p>
+    <div class="stores"><div class="store" aria-disabled="true"><small>for iPhone</small><strong>App Store</strong><span class="tag">Coming soon</span></div><a href="https://play.google.com/store/apps/details?id=app.miskal" class="badge play"><img src="/badge-google-play-en.png" alt="Get it on Google Play"></a></div>
+  </div>
+
+  <div class="links">
+    <a href="/en">Miskal home</a>
+    <a href="/privacy">Privacy Policy</a>
+    <a href="mailto:support@miskal.app">support@miskal.app</a>
+  </div>
+
+  <div class="other">
+    <div class="other-label">Our other app</div>
+    <a href="https://realtry.app/en" class="other-app">
+      <img src="/realtry-icon.png" alt="" width="48" height="48">
+      <div>
+        <strong>Real TRY</strong>
+        <span>What should the dollar and euro cost in lira today? The rate adjusted for TÜİK and ENAG inflation, side by side.</span>
+      </div>
+    </a>
+  </div>
+
+  <footer>Miskal · <a href="mailto:support@miskal.app">support@miskal.app</a>
+  <p class="tm">Google Play and the Google Play logo are trademarks of Google LLC.</p></footer>
+</div>
+<script>
+try { localStorage.setItem('miskal-lang', 'en'); } catch (e) {}
+</script>
+</body>
+</html>
